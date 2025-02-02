@@ -1,14 +1,38 @@
-import ProductCard from './components/productCard'
-import './App.css'
+import { MdDashboard } from "react-icons/md";
+import { TbBrandBooking } from "react-icons/tb";
+import { FaUser } from "react-icons/fa";
+import { MdOutlineSpeaker } from "react-icons/md";
 function App() {
   return (
-    <div>
-      <ProductCard Name= "Audio Setup JCB New " price ="2500" rating="⭐⭐⭐" sold= "5 sold"
-       img="https://mm.jbl.com/dw/image/v2/AAUJ_PRD/on/demandware.static/-/Sites-masterCatalog_Harman/default/dw68adc84b/JBL_CLIP_5_HERO_SAND_49709_x3.jpg?sw=270&sh=330&sm=fit&sfrm=png"/>
-    
-       <ProductCard Name= "JBL Xtreme 4" price ="15055" rating="⭐⭐⭐⭐" sold= "10 sold"
-       img="https://mm.jbl.com/dw/image/v2/AAUJ_PRD/on/demandware.static/-/Sites-masterCatalog_Harman/default/dw047a2e1b/JBL_XTREME_4_HERO_BLUE_47139_X4_1.png?sw=537&sfrm=png"/></div>
-  )
+<div className="w-full h-screen flex">
+  <div className="w-[300px] h-full bg-green-300">
+<button className="w-full h-[50px] text-3xl font-bold flex justify-center items-center">
+<MdDashboard />
+  Dashbord
+</button>
+<button className="w-full h-[50px] text-3xl font-bold flex justify-center items-start">
+<TbBrandBooking />
+Booking
+</button>
+<button className="w-full h-[50px] text-3xl font-bold flex justify-center items-center">
+<FaUser />
+  User
+</button>
+<button className="w-full h-[50px] text-3xl font-bold flex justify-center items-center">
+<MdOutlineSpeaker />
+Item
+</button>
+
+
+  </div>
+<div className="w-full bg-red-600">
+  
+</div>
+</div>
+
+
+);
 }
 
 export default App
+                 

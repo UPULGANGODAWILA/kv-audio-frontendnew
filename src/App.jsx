@@ -1,35 +1,19 @@
-import { MdDashboard } from "react-icons/md";
-import { TbBrandBooking } from "react-icons/tb";
-import { FaUser } from "react-icons/fa";
-import { MdOutlineSpeaker } from "react-icons/md";
+
+import AdminPage from "./components/adminPage";
+import { BrowserRouter,Route,Routes } from "react-router-dom";
 function App() {
   return (
-<div className="w-full h-screen flex">
-  <div className="w-[300px] h-full bg-green-300">
-<button className="w-full h-[50px] text-3xl font-bold flex justify-center items-center">
-<MdDashboard />
-  Dashbord
-</button>
-<button className="w-full h-[50px] text-3xl font-bold flex justify-center items-start">
-<TbBrandBooking />
-Booking
-</button>
-<button className="w-full h-[50px] text-3xl font-bold flex justify-center items-center">
-<FaUser />
-  User
-</button>
-<button className="w-full h-[50px] text-3xl font-bold flex justify-center items-center">
-<MdOutlineSpeaker />
-Item
-</button>
+   
+      <BrowserRouter> 
+      <Routes path="/*">
+        <Route path="admin" element={<AdminPage/>}/>
+        <Route path="/" element={<h1>home Page</h1>}/>
+        <Route path="/*" element={<h1>Not fount Page Error 500</h1>}/>
+      </Routes>
+           
 
-
-  </div>
-<div className="w-full bg-red-600">
-  
-</div>
-</div>
-
+      </BrowserRouter>
+   
 
 );
 }

@@ -1,17 +1,21 @@
 import axios from "axios";
 import { useState } from "react";
 import toast from "react-hot-toast";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export default function UpdateItemPage() {
-	const [productKey, setProductKey] = useState("");
-	const [productName, setProductName] = useState("");
-	const [productPrice, setProductPrice] = useState(0);
-	const [productCategory, setProductCategory] = useState("audio");
-	const [productDimensions, setProductDimensions] = useState("");
-	const [productDescription, setProductDescription] = useState("");
-    const navigate = useNavigate()
+    const location = useLocation()
 
+    console.log(location)
+
+	const [productKey, setProductKey] = useState(location.state.key);
+	const [productName, setProductName] = useState(location.state.name);
+	const [productPrice, setProductPrice] = useState(location.state.price);
+	const [productCategory, setProductCategory] = useState(location.state.category);
+	const [productDimensions, setProductDimensions] = useState(location.state.dimensions);
+	const [productDescription, setProductDescription] = useState(location.state.description);
+    const navigate = useNavigate()
+    
 	async function handleAddItem() {
 		console.log(
 			productKey,
@@ -25,10 +29,9 @@ export default function UpdateItemPage() {
 
 		if (token) {
 			try {
-				const result = await axios.post(
-                    "http://localhost:3000/api/Products",
+				const result = await axios.put(
+					`${import.meta.env.VITE_BACKEND_URL}/api/products/${productKey}`,
 					{
-						key: productKey,
 						name: productName,
 						price: productPrice,
 						category: productCategory,
@@ -57,6 +60,7 @@ export default function UpdateItemPage() {
 			<h1 className="text-lg font-bold mb-4">Update Item</h1>
 			<div className="w-[400px] border p-4 flex flex-col items-center gap-2 rounded-lg shadow-md">
 				<input
+                    disabled
 					type="text"
 					placeholder="Product Key"
 					value={productKey}
@@ -92,7 +96,7 @@ export default function UpdateItemPage() {
 					onChange={(e) => setProductDimensions(e.target.value)}
 					className="w-full p-2 border rounded"
 				/>
-				<input
+				<textarea
 					type="text"
 					placeholder="Product Description"
 					value={productDescription}
@@ -103,7 +107,7 @@ export default function UpdateItemPage() {
 					onClick={handleAddItem}
 					className="w-full p-2 bg-blue-500 text-white rounded hover:bg-blue-600"
 				>
-					Add
+					Update Item
 				</button>
 				<button onClick={()=>{ navigate("/admin/items")}} className="w-full p-2 bg-red-500 text-white rounded hover:bg-red-600">
 					Cancel

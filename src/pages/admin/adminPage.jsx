@@ -2,7 +2,7 @@ import { BsGraphDown } from "react-icons/bs";
 import { FaRegBookmark, FaRegUser } from "react-icons/fa";
 import { MdOutlineSpeaker } from "react-icons/md";
 import { Link, Route, Routes } from "react-router-dom";
-import AdminItemspage from "./adminItemsPage.Jsx";
+import AdminItemspage from "./adminItemsPage.jsx";
 import AddItemPage from "./addItemPage.jsx";
 import UpdateItemPage from "./updateItemPage.jsx";
 export default function AdminPage(){

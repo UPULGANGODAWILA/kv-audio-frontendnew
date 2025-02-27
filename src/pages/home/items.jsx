@@ -1,7 +1,10 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import toast from "react-hot-toast"
-import ProductCard from "../../components/productCard.jsx"
+
+import ProductCard from "../../components/productCard.jsx";
+
+
 
 export default function Items(){
   const [state, setState] = useState("loading")//loading, success, error

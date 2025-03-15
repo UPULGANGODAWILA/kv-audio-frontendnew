@@ -14,6 +14,7 @@ import RegisterPage from "./pages/register/register.jsx";
         <BrowserRouter> 
         <Toaster position="top-right"/>
         <Routes path="/*">
+     
         <Route path="/admin/*" element={<AdminPage/>}/>
         <Route path="/login" element={<LoginPage/>}/>
         <Route path="/register" element={<RegisterPage/>}/>

@@ -32,3 +32,5 @@ export default function ProductCard({ item }) {
     </div>
   );
 }
+
+//fixed

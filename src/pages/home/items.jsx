@@ -1,7 +1,7 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import toast from "react-hot-toast"
-import ProductCard from "../../components/productCard"
+import ProductCard from "../../components/ProductCard"
 
 export default function Items(){
   const [state, setState] = useState("loading")//loading, success, error
@@ -24,7 +24,7 @@ export default function Items(){
       {
         state=="loading"&&
         <div className="w-full h-full  flex justify-center items-center">
-          <div className="w-[50px] h-[50px] border-4 rounded-full border-t-green-500 animate-spin">
+          <div className="w-[40px] h-[40px] border-4 rounded-full border-t-green-500 animate-spin">
           </div>
         </div>
       }
